@@ -32,7 +32,7 @@
 
 \addcontentsline{intro}{section}{Introduction}
 \section{Introduction}
-Trading with instruments including more than one asset often gives rise to the problem of homogeneity instead of a diverse  portfolio. To solve this problem, the problem of fractional set covering is considered for balancing a portfolio. The set cover problem is as follows, given a set of vertices, $U$, and a collection of subsets of the vertices, find the minimum collection of subsets that covers $U$. Fractional set cover is a variant of the set cover problem where each set is allowed a continuous instead of a discrete selection for each vertice. \cite{bib:fracCover} 
+Trading with instruments including more than one asset often gives rise to the problem of homogeneity instead of a diverse portfolio. To solve this problem, the problem of fractional set covering is considered for balancing a portfolio. The set cover problem is as follows, given a set of vertices, $U$, and a collection of subsets of the vertices, find the minimum collection of subsets that covers $U$. Fractional set cover is a variant of the set cover problem where each set is allowed a continuous instead of a discrete selection for each vertice. \cite{bib:fracCover} 
 
 \section{Problem statement}
 Given a portfolio, $V$, with associated assets $v_i, \ldots, v_n$, and a collection of instruments, $V^* := \{V^*_1, \ldots, V^*_m$\}, with their own assets $v^*_{1,1}, \ldots, v^*_{1,k}$ such that $v_{i,j} \in V,~\forall i,j$. Find the minimal subset of $V^*$ that covers $V$.
@@ -95,9 +95,9 @@ Given a portfolio, $V$, with associated assets $v_i, \ldots, v_n$, and a collect
 \begin{equation}
     A^*_i := 
     \begin{pmatrix}
-        I(v_1 \in V^*_i) \\
+        v^*_{i,k} * I(v_1 \in V^*_i), ~ \arg_k \{ v_1 = v_{i,k} \}  \\
         \vdots \\
-        I(v_n \in V^*_i)
+        v^*_{i,k} * I(v_n \in V^*_i), ~ \arg_k \{ v_n = v_{i,k} \}
     \end{pmatrix}.
 \end{equation}
 
